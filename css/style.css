@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .33rem;
+    border: .15rem solid rgb(159, 141, 208);
+}
+
+.container .item {
+    display: grid;
+    place-content: center;
+    background: linear-gradient(to left, rgb(74, 74, 202), rgb(43, 43, 200));
+    min-width: 15rem;
+    min-height: 25rem;
+}
+
+.container .item:hover {
+    background: linear-gradient(to left, rgb(63, 63, 206), rgb(31, 31, 208));
+    color: #fff;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.container .item h1 {
+    font-size: 9rem;
+}
+
+/* popup style */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: .2s ease-in-out;
+    background-color: rgb(44, 4, 100);
+    color: #fff;
+    border: .2rem solid rgb(118, 59, 194);
+    border-radius: 1.2rem;
+    z-index: 10;
+}
+
+.popup.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup h1 {
+    display: grid;
+    place-content: center;
+    padding: 3rem 0;
+    font-size: 6rem;
+}
+
+.popup .bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: .3rem;
+    margin: .3rem;
+    border-top: 3px solid #bbb;
+}
+
+.popup .bottom h3 {
+    display: grid;
+    place-content: center;
+    font-size: 3rem;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: .3s ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(116, 104, 104, 0.5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+ /* cases section style */
+main {
+    margin: 1rem auto;
+    width: 200px;
+    perspective: 200px;
+}
+
+main section {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transition: transform 1s;
+    transform-origin: right center;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+main section.active {
+    transform: translate(-100%) rotateY(-180deg);
+}
+
+main section .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+main section .face.back {
+    background-color: rgb(62, 62, 238);
+    transform: rotateY(180deg);
+}

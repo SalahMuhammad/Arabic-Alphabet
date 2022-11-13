@@ -1,0 +1,44 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+form {
+  width: 80%;
+  margin: 3rem auto;
+  display: grid;
+  /* align-items: center; */
+  justify-content: center;
+  /* background-color: aqua; */
+}
+
+form input {
+  padding: .7rem .5rem;
+  margin: .5rem 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+form button {
+  padding: .5rem;
+}
+
+.error {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.error span {
+  color: red;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  padding: 1rem;
+  font-size: 1.7rem;
+}
